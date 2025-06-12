@@ -1,0 +1,51 @@
+
+<div class="login-container flex-rows flex-wrap">
+  <!-- Imagen lateral izquierda -->
+  <div class="login-image flex-grow">
+    <img src="assets/images/login.svg" alt="Login Image" />
+  </div>
+
+  <!-- Formulario a la derecha -->
+  <div class="login-form flex-columns flex-grow">
+
+    <div class="login-main">
+      <div class="login-form__title flex-grow">
+        <img src="assets/images/logos/Logo-RD.svg" alt="Logo Title Image" />
+      </div>
+      <h1 class="heading--2 text-primary">Iniciar sesión en tu cuenta</h1>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="full-width margin-bottom-m">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width margin-bottom-l">
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" type="password" required />
+        </mat-form-field>
+
+        <button mat-flat-button mat-primary class="full-width" type="submit" [disabled]="loginForm.invalid">
+          {{ 'ENTER' | translate }}
+        </button>
+      </form>
+    </div>
+    <footer class="login-footer flex-rows space-between align-items-center margin-top-l">
+      <div class="login-footer__language">
+        <mat-icon>language</mat-icon>
+        <mat-form-field appearance="fill" class="language-select">
+          <mat-label>{{'LANGUAGE' | translate }}</mat-label>
+          <mat-select [(value)]="selectedLanguage">
+            <mat-option value="es">Español</mat-option>
+            <mat-option value="en">English</mat-option>
+            <mat-option value="fr">Français</mat-option>
+            <mat-option value="pt">Português</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="login-footer__logo flex-grow">
+        <img src="assets/images/logos/Econocom.svg" alt="Logo Econocom Image" />
+      </div>
+    </footer>
+  </div>
+</div>

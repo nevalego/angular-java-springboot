@@ -1,0 +1,150 @@
+@import '../../../assets/scss/1-settings/variables';
+@import '../../../assets/scss/3-tools/breakpoints';
+@import '../../../assets/scss/3-tools/flexbox';
+
+.login-container {
+  height: 100vh;
+  background: $background-primary;
+  border-radius: $border-radius-l;
+  box-shadow: 0 0 10px rgba($neutral-20, 0.15);
+  overflow: hidden;
+
+  @include flexbox(row, nowrap) {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .login-image {
+    background-color: $neutral-99;
+    flex: 1 1 45%;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+
+    @include flexbox(row, nowrap) {
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      max-height: 802px;
+      max-width: 802px;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .login-form {
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 528px;
+
+    h1 {
+      margin-bottom: $spacing-l;
+      color: $neutral-20
+    }
+
+    form {
+      width: 100%;
+
+      .full-width {
+        width: 100%;
+      }
+    }
+
+
+    .login-main {
+      height: 100%;
+      margin: auto;
+      max-width: 80%;
+      min-width: 280px;
+      width: 70%;
+
+      @include flexbox(column, nowrap) {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .login-footer {
+      height: 44px;
+
+      @include flexbox(row, nowrap) {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__language {
+          @include flexbox(row, nowrap) {
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .language-select {
+        width: 120px;
+      }
+    }
+  }
+
+  @include for-size(md-down) {
+    flex-direction: column;
+
+    .login-image,
+    .login-form {
+      flex: none;
+      width: 100%;
+    }
+
+    .login-image {
+      height: 180px;
+    }
+  }
+}
+
+
+// .login {
+//   &__container {
+//     max-width: 400px;
+//     margin: 3rem auto;
+//     padding: 2rem;
+//     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+//     background-color: #fff;
+//     border-radius: 8px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+
+//   &__image {
+//     width: 150px;
+//     margin-bottom: 1.5rem;
+//   }
+
+//   &__form {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1.5rem;
+//   }
+
+//   &__form-field {
+//     width: 100%;
+//   }
+
+//   &__error {
+//     margin-top: 1rem;
+//     color: $error;
+//     font-size: 0.875rem;
+//     text-align: center;
+//   }
+// }

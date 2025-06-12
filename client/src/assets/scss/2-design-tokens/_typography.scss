@@ -1,9 +1,13 @@
+@import "1-settings/variables";
+@import "3-tools/breakpoints";
+@import "3-tools/fluid-type";
+
 @font-face {
     font-family: "Lato";
     font-weight: normal;
     font-style: normal;
 
-    src: url("../../fonts/Lato/Lato-Regular.ttf") format("truetype");
+    src: url("/assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -11,8 +15,10 @@
     font-weight: bold;
     font-style: normal;
 
-    src: url("../../fonts/Lato/Lato-Bold.ttf") format("truetype");
+    src: url("/assets/fonts/Lato/Lato-Bold.ttf") format("truetype");
 }
+
+$font-stack: "Lato", sans-serif;
 
 * {
     font-family: $font-stack;
