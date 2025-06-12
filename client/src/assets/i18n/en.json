@@ -1,3 +1,18 @@
 {
-  "ENTER": "Enter"
+  "LOGIN": "Sign in to your account",
+  "ENTER": "Enter",
+  "DONT_HAVE_ACCOUNT": "Don't have an account?",
+  "REGISTER": "Register",
+  "EMAIL": "Email",
+  "PASSWORD": "Password",
+  "SHOW_PASS": "Show password",
+  "HIDE_PASS": "Hide password",
+  "ENTER_SSO": "Sign in with SSO",
+  "OTHER_ACCESS_METHODS": "Other access methods",
+  "LANGUAGE": "Language",
+  "LOGIN_RESULT": "Login result",
+  "EMAIL_INVALID_MESSAGE": "Please enter a valid email address.",
+  "EMAIL_REQUIRED_MESSAGE": "Email is required.",
+  "PASSWORD_REQUIRED_MESSAGE": "Password is required.",
+  "PASSWORD_MIN_LENGTH_MESSAGE": "Password must be at least 6 characters long."
 }

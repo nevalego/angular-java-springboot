@@ -1,3 +1,18 @@
 {
-  "ENTER": "Entrar"
+  "LOGIN": "Inicia sesión en tu cuenta",
+  "ENTER": "Entrar",
+  "DONT_HAVE_ACCOUNT": "¿No tienes una cuenta?",
+  "REGISTER": "Regístrate",
+  "EMAIL": "Correo electrónico",
+  "PASSWORD": "Contraseña",
+  "SHOW_PASS": "Mostrar contraseña",
+  "HIDE_PASS": "Ocultar contraseña",
+  "ENTER_SSO": "Entrar con SSO",
+  "OTHER_ACCESS_METHODS": "Otras formas de acceso",
+  "LANGUAGE": "Idioma",
+  "LOGIN_RESULT": "Resultado del inicio de sesión",
+  "EMAIL_INVALID_MESSAGE": "Por favor, introduce una dirección de correo electrónico válida.",
+  "EMAIL_REQUIRED_MESSAGE": "El correo electrónico es obligatorio.",
+  "PASSWORD_REQUIRED_MESSAGE": "La contraseña es obligatoria.",
+  "PASSWORD_MIN_LENGTH_MESSAGE": "La contraseña debe tener al menos 6 caracteres."
 }

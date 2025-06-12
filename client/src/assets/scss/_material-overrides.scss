@@ -1,6 +1,122 @@
+@import "1-settings/variables";
 
 ::ng-deep {
-    .mat-form-field {
-        //...material overrides here
+.language-select-field {
+    width: auto;
+    flex-grow: 1;
+    max-width: 150px; // Si quieres un ancho máximo para el selector
+    margin-right: $spacing-m;
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: $white !important;
     }
+
+    .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+      padding-top: 0  !important;
+      padding-bottom: 0  !important;
+    }
+
+    // Aumentamos la especificidad para las partes internas de Material
+    .mat-form-field-wrapper {
+        margin: 0 !important;
+        padding-bottom: 0 !important; // Elimina el padding de abajo para quitar la línea
+
+        .mat-form-field-underline {
+            display: none !important; // Oculta la línea inferior
+        }
+        .mat-form-field-label-wrapper {
+            display: none !important; // Oculta la etiqueta si existe
+        }
+    }
+
+    // Asegurarse de que el color de fondo del input sea transparente o coincida con el deseado
+    .mat-form-field-flex {
+        background-color: transparent !important; // Quita el fondo de Material
+        border-radius: $border-radius-s; // Ajusta el radio de borde si deseas
+    }
+
+    // Estilos para el contenedor del input real (donde se muestra el texto "SPANISH")
+    .mat-form-field-infix {
+        border: none !important; // Asegura que no haya bordes por defecto
+        padding: $spacing-xs 0 !important; // Ajusta el padding interno (ej: vertical $spacing-xs, horizontal 0)
+        line-height: normal; // Alinear verticalmente el texto si es necesario
+    }
+}
+
+// Estilos para el componente mat-select
+// Usamos la clase personalizada 'language-select-input'
+.language-select-input {
+    // Estilos para el valor seleccionado (el texto "SPANISH" / "IDIOMA: ES")
+    .mat-select-value {
+        color: $neutral-50 !important; // ¡Forzamos el color!
+        font-size: $font-s !important; // ¡Forzamos el tamaño!
+        padding-left: 0 !important; // Asegurarse de que no haya padding extra a la izquierda
+        padding-right: 0 !important; // Asegurarse de que no haya padding extra a la derecha
+        // Alineación vertical para el texto
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    // Estilos para el icono de la flecha nativa de mat-select
+    .mat-select-arrow-wrapper {
+        transform: none !important; // Resetea cualquier transformación
+        padding-left: $spacing-xs !important; // Espacio entre el texto y la flecha
+
+        .mat-select-arrow {
+            color: $neutral-50 !important; // ¡Forzamos el color de la flecha!
+            font-size: $font-s !important; // ¡Forzamos el tamaño de la flecha!
+            width: $font-s !important;
+            height: $font-s !important;
+            margin: 0 !important;
+        }
+    }
+}
+
+// Estilos para el panel desplegable de las opciones
+.mat-select-panel {
+    background-color: $white !important; // ¡Forzamos el fondo!
+    border-radius: $border-radius-s !important; // ¡Forzamos el border-radius!
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1) !important; // ¡Forzamos la sombra!
+}
+
+// Estilos para cada opción individual (mat-option)
+.mat-option {
+    color: $neutral-50 !important; // ¡Forzamos el color de texto!
+    font-size: $font-s !important; // ¡Forzamos el tamaño de fuente!
+    padding: $spacing-xs $spacing-m !important; // ¡Forzamos el padding!
+
+    &:hover:not(.mat-option-disabled) {
+        background-color: rgba($primary, 0.1) !important; // ¡Forzamos el hover!
+    }
+    &.mat-selected:not(.mat-option-disabled) {
+        background-color: rgba($primary, 0.2) !important; // ¡Forzamos el seleccionado!
+        color: $primary !important; // ¡Forzamos el color de texto seleccionado!
+    }
+    // Asegurarse de que el ripple effect no interfiera si no lo quieres
+    .mat-ripple-element {
+        background-color: transparent !important;
+    }
+}
+
+// Para eliminar el borde inferior naranja que se ve en la imagen
+// Este es a menudo el color de acento de Material.
+// Necesitas apuntar al estado `focused` o `active` de MatFormField.
+.mat-form-field-appearance-fill .mat-form-field-flex,
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  // Asegúrate de que no haya un color de borde por defecto
+  border-color: transparent !important;
+}
+
+// Para los estados de enfoque/hover/error
+.mat-form-field.mat-focused .mat-form-field-underline,
+.mat-form-field.mat-form-field-invalid .mat-form-field-underline,
+.mat-form-field.mat-focused .mat-form-field-ripple,
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+    background-color: transparent !important; // Elimina el color del ripple/línea al enfocar o error
+}
+
+.mat-form-field-underline {
+    display: none !important; // Asegura que la línea de abajo no aparezca en ningún estado
+}
 }

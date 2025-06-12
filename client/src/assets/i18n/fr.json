@@ -1,3 +1,18 @@
 {
-  "ENTER": "Enter"
+  "LOGIN": "Connectez-vous à votre compte",
+  "ENTER": "Entrer",
+  "DONT_HAVE_ACCOUNT": "Vous n'avez pas de compte ?",
+  "REGISTER": "S'inscrire",
+  "EMAIL": "E-mail",
+  "PASSWORD": "Mot de passe",
+  "SHOW_PASS": "Afficher le mot de passe",
+  "HIDE_PASS": "Masquer le mot de passe",
+  "ENTER_SSO": "Se connecter avec SSO",
+  "OTHER_ACCESS_METHODS": "Autres méthodes d'accès",
+  "LANGUAGE": "Langue",
+  "LOGIN_RESULT": "Résultat de la connexion",
+  "EMAIL_INVALID_MESSAGE": "Veuillez entrer une adresse e-mail valide.",
+  "EMAIL_REQUIRED_MESSAGE": "L'e-mail est requis.",
+  "PASSWORD_REQUIRED_MESSAGE": "Le mot de passe est requis.",
+  "PASSWORD_MIN_LENGTH_MESSAGE": "Le mot de passe doit comporter au moins 6 caractères."
 }

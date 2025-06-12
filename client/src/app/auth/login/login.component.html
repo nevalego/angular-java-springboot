@@ -1,51 +1,78 @@
-
-<div class="login-container flex-rows flex-wrap">
-  <!-- Imagen lateral izquierda -->
-  <div class="login-image flex-grow">
-    <img src="assets/images/login.svg" alt="Login Image" />
-  </div>
-
-  <!-- Formulario a la derecha -->
-  <div class="login-form flex-columns flex-grow">
-
-    <div class="login-main">
-      <div class="login-form__title flex-grow">
-        <img src="assets/images/logos/Logo-RD.svg" alt="Logo Title Image" />
-      </div>
-      <h1 class="heading--2 text-primary">Iniciar sesión en tu cuenta</h1>
-
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill" class="full-width margin-bottom-m">
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email" type="email" required />
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="full-width margin-bottom-l">
-          <mat-label>Contraseña</mat-label>
-          <input matInput formControlName="password" type="password" required />
-        </mat-form-field>
-
-        <button mat-flat-button mat-primary class="full-width" type="submit" [disabled]="loginForm.invalid">
-          {{ 'ENTER' | translate }}
-        </button>
-      </form>
+<div class="login-container">
+        <div class="illustration-section">
+            <img src="assets/images/login.svg" alt="Illustration" class="illustration-image">
+        </div>
+        <div class="login-section">
+            <div class="login-card">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <img src="assets/images/logos/Logo-RD.svg" alt="realdooh Logo" class="realdooh-logo">
+                <h1 class="heading--3">{{ 'LOGIN' | translate }}</h1>
+                <div class="form-group">
+                    <label for="email">{{ 'EMAIL' | translate }}</label>
+                    <input type="email" id="email" class="form-control" formControlName="email" placeholder="{{ 'EMAIL' | translate }}">
+                    <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)" class="error-message">
+                      <p *ngIf="loginForm.get('email')?.errors?.['required']">
+                          {{ 'EMAIL_REQUIRED_MESSAGE' | translate }}
+                      </p>
+                      <p *ngIf="loginForm.get('email')?.errors?.['email']">
+                          {{ 'EMAIL_INVALID_MESSAGE' | translate }}
+                      </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ 'PASSWORD' | translate }}</label>
+                    <div class="password-input-wrapper">
+                      <input [type]="hidePassword ? 'password' : 'text'" id="password" class="form-control" formControlName="password" placeholder="{{ 'PASSWORD' | translate }}">
+                      <mat-icon  class="password-toggle-icon"
+                        (click)="togglePasswordVisibility()"
+                        [attr.aria-label]="hidePassword ? ('HIDE_PASS' | translate) : ('SHOW_PASS' | translate)"
+                        aria-hidden="false"                      >
+                        {{ hidePassword ? 'visibility_off' : 'visibility' }}
+                      </mat-icon>
+                    </div>
+                    <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" class="error-message">
+                      <p *ngIf="loginForm.get('password')?.errors?.['required']">
+                          {{ 'PASSWORD_REQUIRED_MESSAGE' | translate }}
+                      </p>
+                      <p *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                          {{ 'PASSWORD_MIN_LENGTH_MESSAGE' | translate: { requiredLength: loginForm.get('password')?.errors?.['minlength'].requiredLength } }}
+                      </p>
+                    </div>
+                </div>
+                <button type="submit" class="mat-flat-button mat-primary full-width margin-top-m"
+                [ngClass]="{'disabled': loginForm.invalid}"
+                [disabled]="loginForm.invalid">
+                    <span>{{ 'ENTER' | translate}}</span>
+                </button>
+                <div class="other-access-methods">
+                    <p class="text-neutral-50">{{ 'OTHER_ACCESS_METHODS' | translate }}:</p>
+                    <button class="mat-flat-button mat-secondary full-width">
+                        <span>{{ 'ENTER_SSO' | translate}}</span>
+                    </button>
+                </div>
+                <p class="no-account-text text-align-center">
+                    {{ 'DONT_HAVE_ACCOUNT' | translate }} <a href="#" class="text-primary">
+                      {{ 'REGISTER' | translate }}
+                    </a>
+                </p>
+                <p class="text-align-center">
+                    {{ 'LOGIN_RESULT' | translate }}: {{ loginResult }}
+                </p>
+                </form>
+            </div>
+            <div class="footer-info flex-rows space-between align-items-center">
+                <div class="language-selector">
+                  <mat-icon>language</mat-icon>
+                  <mat-form-field appearance="fill" class="language-select-field">
+                    <mat-select [formControl]="languageControl" disableRipple class="language-select-input"
+                    (selectionChange)="switchLanguage($event.value)">
+                        <mat-option *ngFor="let lang of languages" [value]="lang">
+                            {{ 'LANGUAGE' | translate }}: {{ lang | uppercase }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                </div>
+                <img src="assets/images/logos/Econocom.svg" alt="Econacom Logo" class="econacom-logo">
+            </div>
+        </div>
     </div>
-    <footer class="login-footer flex-rows space-between align-items-center margin-top-l">
-      <div class="login-footer__language">
-        <mat-icon>language</mat-icon>
-        <mat-form-field appearance="fill" class="language-select">
-          <mat-label>{{'LANGUAGE' | translate }}</mat-label>
-          <mat-select [(value)]="selectedLanguage">
-            <mat-option value="es">Español</mat-option>
-            <mat-option value="en">English</mat-option>
-            <mat-option value="fr">Français</mat-option>
-            <mat-option value="pt">Português</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="login-footer__logo flex-grow">
-        <img src="assets/images/logos/Econocom.svg" alt="Logo Econocom Image" />
-      </div>
-    </footer>
-  </div>
-</div>

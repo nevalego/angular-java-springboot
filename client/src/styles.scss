@@ -1,9 +1,39 @@
-@import "4-generic/normalize";
-@import "4-generic/reset";
+@import "assets/scss/4-generic/normalize";
+@import "assets/scss/4-generic/reset";
 
-@import "2-design-tokens/typography";
-@import "1-settings/variables";
-@import "3-tools/breakpoints";
-@import "3-tools/notouch-hover";
-@import "3-tools/fluid-type";
-@import "3-tools/nth-child";
+
+@import "assets/scss/1-settings/variables";
+@import "assets/scss/2-design-tokens/typography";
+
+@import "assets/scss/3-tools/aspect-ratio";
+@import "assets/scss/3-tools/breakpoints";
+@import "assets/scss/3-tools/ellipsis";
+@import "assets/scss/3-tools/flexbox";
+@import "assets/scss/3-tools/fluid-type";
+@import "assets/scss/3-tools/font-face";
+@import "assets/scss/3-tools/notouch-hover";
+@import "assets/scss/3-tools/nth-child";
+@import "assets/scss/3-tools/transition";
+
+// Carga de fuentes de los archivos en assets/fonts/Lato
+@include font-face("Lato", "/client/src/assets/fonts/Lato/Lato-Regular", $weight: normal, $style: normal);
+@include font-face("Lato", "/client/src/assets/fonts/Lato/Lato-Bold", $weight: bold, $style: normal);
+@include font-face("Lato", "/client/src/assets/fonts/Lato/Lato-Black", $weight: 900, $style: normal);
+
+@import "assets/scss/5-elements/buttons";
+@import "assets/scss/6-skeleton/layouts";
+@import "assets/scss/7-components/forms";
+@import "assets/scss/8-utilities/modifiers";
+@import "assets/scss/8-utilities/states";
+
+// Angular mateiral y overrides
+@import "assets/scss/custom-material-theme";
+@import "assets/scss/material-overrides";
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: $font-stack;
+    background-color: $neutral-99;
+}

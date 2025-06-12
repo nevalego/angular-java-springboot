@@ -1,3 +1,18 @@
 {
-  "ENTER": "Entrar"
+  "LOGIN": "Faça login na sua conta",
+  "ENTER": "Entrar",
+  "DONT_HAVE_ACCOUNT": "Não tem uma conta?",
+  "REGISTER": "Cadastre-se",
+  "EMAIL": "Email",
+  "PASSWORD": "Senha",
+  "SHOW_PASS": "Mostrar senha",
+  "HIDE_PASS": "Ocultar senha",
+  "ENTER_SSO": "Entrar com SSO",
+  "OTHER_ACCESS_METHODS": "Outras formas de acesso",
+  "LANGUAGE": "Idioma",
+  "LOGIN_RESULT": "Resultado do login",
+  "EMAIL_INVALID_MESSAGE": "Por favor, insira um endereço de e-mail válido.",
+  "EMAIL_REQUIRED_MESSAGE": "O e-mail é obrigatório.",
+  "PASSWORD_REQUIRED_MESSAGE": "A senha é obrigatória.",
+  "PASSWORD_MIN_LENGTH_MESSAGE": "A senha deve ter pelo menos 6 caracteres."
 }

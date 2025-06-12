@@ -1,150 +1,222 @@
-@import '../../../assets/scss/1-settings/variables';
-@import '../../../assets/scss/3-tools/breakpoints';
-@import '../../../assets/scss/3-tools/flexbox';
+@import "../../../assets/scss/1-settings/variables";
+@import "../../../assets/scss/3-tools/breakpoints";
+@import "../../../assets/scss/3-tools/fluid-type";
+@import "../../../assets/scss/3-tools/flexbox";
+@import "../../../assets/scss/3-tools/notouch-hover";
 
-.login-container {
-  height: 100vh;
-  background: $background-primary;
-  border-radius: $border-radius-l;
-  box-shadow: 0 0 10px rgba($neutral-20, 0.15);
-  overflow: hidden;
-
-  @include flexbox(row, nowrap) {
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .login-image {
-    background-color: $neutral-99;
-    flex: 1 1 45%;
-    height: 100%;
-    margin: auto;
+ .login-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
     width: 100%;
+    overflow: hidden;
 
-    @include flexbox(row, nowrap) {
-      align-items: center;
-      justify-content: flex-end;
+    @include for-size(md-down) {
+        flex-direction: column;
+    }
+}
+
+.illustration-section {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $neutral-99;
+
+    .illustration-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 
-    img {
-      display: block;
-      height: 100%;
-      max-height: 802px;
-      max-width: 802px;
-      object-fit: cover;
-      width: 100%;
+    @include for-size(md-down) {
+        display: none;
     }
-  }
+}
 
-  .login-form {
-    background: $white;
+.login-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding: $spacing-xl;
+
+    @include for-size(md-down) {
+        padding: $spacing-m;
+        min-height: 100vh;
+        justify-content: space-between;
+    }
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: $white;
+    text-align: center;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
-    width: 528px;
-
-    h1 {
-      margin-bottom: $spacing-l;
-      color: $neutral-20
-    }
+    align-items: center;
 
     form {
       width: 100%;
+    }
 
-      .full-width {
+    @include for-size(md-down) {
+        padding: $spacing-m;
+        box-shadow: none;
+    }
+
+    .realdooh-logo {
+        margin-bottom: $spacing-xl;
+    }
+
+    .heading--3 {
+        color: $neutral-10;
+        margin-bottom: $spacing-l;
+    }
+
+    .form-group {
+        text-align: left;
+        margin-bottom: $spacing-m;
         width: 100%;
-      }
-    }
 
-
-    .login-main {
-      height: 100%;
-      margin: auto;
-      max-width: 80%;
-      min-width: 280px;
-      width: 70%;
-
-      @include flexbox(column, nowrap) {
-        justify-content: center;
-        align-items: center;
-      }
-    }
-
-    .login-footer {
-      height: 44px;
-
-      @include flexbox(row, nowrap) {
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      &__language {
-          @include flexbox(row, nowrap) {
-          justify-content: space-between;
-          align-items: center;
+        &:last-of-type {
+            margin-bottom: $spacing-l;
         }
-      }
 
-      .logo {
-        height: 40px;
-      }
+        label {
+            display: block;
+            margin-bottom: $spacing-xs;
+            font-size: $font-s;
+            color: $neutral-40;
+            font-weight: normal;
+        }
 
-      .language-select {
-        width: 120px;
-      }
+        .form-control {
+            width: 100%;
+            padding: $spacing-s $spacing-m;
+            border: 1px solid $neutral-80;
+            border-radius: $border-radius-s;
+            font-size: $font-m;
+            color: $neutral-20;
+            box-sizing: border-box;
+            height: 48px;
+
+
+            &:focus {
+                outline: none;
+                border-color: $primary;
+                box-shadow: 0 0 0 2px rgba($primary, 0.2);
+            }
+
+            &::placeholder {
+                color: $neutral-60;
+            }
+        }
+
+        .password-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            input.form-control {
+              width: 100%;
+              padding: $spacing-s $spacing-m;
+              border: 1px solid $neutral-80;
+              border-radius: $border-radius-s;
+              background-color: $white;
+              color: $neutral-20;
+              font-size: $font-m;
+              padding-right: $spacing-xl;
+              border-color: $neutral-80;
+
+              &:focus {
+                  border-color: $primary;
+                  outline: none;
+              }
+              &:focus + .password-toggle-icon {
+                  color: $primary;
+              }
+          }
+
+          .password-toggle-icon {
+            position: absolute;
+            right: $spacing-s;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $neutral-50;
+            cursor: pointer;
+            font-size: $font-l;
+            width: $font-l;
+            height: $font-l;
+
+            transition: color 0.2s ease-in-out;
+          }
+        }
     }
-  }
 
-  @include for-size(md-down) {
-    flex-direction: column;
-
-    .login-image,
-    .login-form {
-      flex: none;
-      width: 100%;
+    .mat-flat-button {
+        &.mat-primary {
+            margin-bottom: $spacing-s;
+            height: 48px;
+        }
+        &.mat-secondary {
+            height: 48px;
+        }
     }
 
-    .login-image {
-      height: 180px;
+    .other-access-methods {
+        margin-top: $spacing-m;
+        margin-bottom: $spacing-m;
+        width: 100%;
+
+        p {
+            margin-bottom: $spacing-s;
+            font-size: $font-s;
+        }
     }
-  }
+
+    .no-account-text {
+        font-size: $font-s;
+        color: $neutral-50;
+        margin-top: $spacing-l;
+
+        a {
+            font-weight: bold;
+            text-decoration: underline;
+            &:hover {
+                color: darken($primary, 10%);
+            }
+        }
+    }
 }
 
+.footer-info {
+  height: 44px;
+  width: 100%;
 
-// .login {
-//   &__container {
-//     max-width: 400px;
-//     margin: 3rem auto;
-//     padding: 2rem;
-//     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-//     background-color: #fff;
-//     border-radius: 8px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
+    @include for-size(md-down) {
+        margin-top: $spacing-m;
+    }
 
-//   &__image {
-//     width: 150px;
-//     margin-bottom: 1.5rem;
-//   }
+    .language-selector {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      justify-content: space-between;
+      padding: 0 $spacing-s;
 
-//   &__form {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 1.5rem;
-//   }
+      mat-icon {
+        color: $neutral-50;
+      }
+    }
 
-//   &__form-field {
-//     width: 100%;
-//   }
-
-//   &__error {
-//     margin-top: 1rem;
-//     color: $error;
-//     font-size: 0.875rem;
-//     text-align: center;
-//   }
-// }
+    .econacom-logo {
+        width: auto;
+    }
+}
