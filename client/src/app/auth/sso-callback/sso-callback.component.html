@@ -1,0 +1,5 @@
+<div class="sso-callback-container">
+      <h2>Processing SSO login...</h2>
+      <p *ngIf="message">{{ message | translate }}</p>
+      <div *ngIf="isLoading" class="spinner"></div>
+    </div>

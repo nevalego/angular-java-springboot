@@ -6,10 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { MyAngularMaterialModule } from '../my-angular-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { SsoCallbackComponent } from './sso-callback/sso-callback.component';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SsoCallbackComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

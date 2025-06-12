@@ -14,5 +14,10 @@
   "EMAIL_INVALID_MESSAGE": "Por favor, introduce una dirección de correo electrónico válida.",
   "EMAIL_REQUIRED_MESSAGE": "El correo electrónico es obligatorio.",
   "PASSWORD_REQUIRED_MESSAGE": "La contraseña es obligatoria.",
-  "PASSWORD_MIN_LENGTH_MESSAGE": "La contraseña debe tener al menos 6 caracteres."
+  "PASSWORD_MIN_LENGTH_MESSAGE": "La contraseña debe tener al menos 6 caracteres.",
+  "GLOBAL.PROCESSING_SSO": "Procesando inicio de sesión SSO...",
+  "GLOBAL.VALIDATING_SSO": "Validando SSO...",
+  "GLOBAL.SSO_SUCCESS": "Inicio de sesión SSO exitoso. Redirigiendo...",
+  "GLOBAL.SSO_FAILED_GENERIC": "Error en el inicio de sesión SSO. Por favor, inténtalo de nuevo.",
+  "GLOBAL.SSO_MISSING_PARAMS": "Parámetros de SSO faltantes."
 }

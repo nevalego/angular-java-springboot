@@ -76,6 +76,10 @@ export class LoginComponent  implements OnInit, OnDestroy{
     }));
   }
 
+  onSsoLogin(): void {
+    this.authService.initiateSso();
+  }
+
   togglePasswordVisibility(): void {
     this.hidePassword = !this.hidePassword;
   }

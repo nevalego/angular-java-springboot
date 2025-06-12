@@ -14,5 +14,10 @@
   "EMAIL_INVALID_MESSAGE": "Please enter a valid email address.",
   "EMAIL_REQUIRED_MESSAGE": "Email is required.",
   "PASSWORD_REQUIRED_MESSAGE": "Password is required.",
-  "PASSWORD_MIN_LENGTH_MESSAGE": "Password must be at least 6 characters long."
+  "PASSWORD_MIN_LENGTH_MESSAGE": "Password must be at least 6 characters long.",
+  "GLOBAL.PROCESSING_SSO": "Processing SSO login...",
+  "GLOBAL.VALIDATING_SSO": "Validating SSO parameters...",
+  "GLOBAL.SSO_SUCCESS": "SSO login successful. Redirecting...",
+  "GLOBAL.SSO_FAILED_GENERIC": "SSO login failed. Please try again.",
+  "GLOBAL.SSO_MISSING_PARAMS": "Missing SSO parameters."
 }

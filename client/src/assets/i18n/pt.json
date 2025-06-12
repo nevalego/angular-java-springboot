@@ -14,5 +14,10 @@
   "EMAIL_INVALID_MESSAGE": "Por favor, insira um endereço de e-mail válido.",
   "EMAIL_REQUIRED_MESSAGE": "O e-mail é obrigatório.",
   "PASSWORD_REQUIRED_MESSAGE": "A senha é obrigatória.",
-  "PASSWORD_MIN_LENGTH_MESSAGE": "A senha deve ter pelo menos 6 caracteres."
+  "PASSWORD_MIN_LENGTH_MESSAGE": "A senha deve ter pelo menos 6 caracteres.",
+  "GLOBAL.PROCESSING_SSO": "Processando login SSO...",
+  "GLOBAL.VALIDATING_SSO": "Validando parâmetros SSO...",
+  "GLOBAL.SSO_SUCCESS": "Login SSO bem-sucedido. Redirecionando...",
+  "GLOBAL.SSO_FAILED_GENERIC": "Falha no login SSO. Por favor, tente novamente.",
+  "GLOBAL.SSO_MISSING_PARAMS": "Parâmetros SSO ausentes."
 }

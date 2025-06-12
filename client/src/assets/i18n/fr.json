@@ -14,5 +14,10 @@
   "EMAIL_INVALID_MESSAGE": "Veuillez entrer une adresse e-mail valide.",
   "EMAIL_REQUIRED_MESSAGE": "L'e-mail est requis.",
   "PASSWORD_REQUIRED_MESSAGE": "Le mot de passe est requis.",
-  "PASSWORD_MIN_LENGTH_MESSAGE": "Le mot de passe doit comporter au moins 6 caractères."
+  "PASSWORD_MIN_LENGTH_MESSAGE": "Le mot de passe doit comporter au moins 6 caractères.",
+  "GLOBAL.PROCESSING_SSO": "Traitement de la connexion SSO...",
+  "GLOBAL.VALIDATING_SSO": "Validation des paramètres SSO...",
+  "GLOBAL.SSO_SUCCESS": "Connexion SSO réussie. Redirection en cours...",
+  "GLOBAL.SSO_FAILED_GENERIC": "Échec de la connexion SSO. Veuillez réessayer.",
+  "GLOBAL.SSO_MISSING_PARAMS": "Paramètres SSO manquants."
 }
