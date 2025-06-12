@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LoginComponent  implements OnInit, OnDestroy{
 
   loginResult = '';
+  loginError = false;
   languageControl = this.fb.control('es');
   languages = [ 'en','es', 'fr', 'pt'];
 
@@ -33,6 +34,11 @@ export class LoginComponent  implements OnInit, OnDestroy{
     if (!this.languageControl.value) {
         this.languageControl.setValue('es');
     }
+
+    this.subscription.add(this.loginForm.valueChanges.subscribe(() => {
+      this.loginResult = '';
+      this.loginError = false;
+    }));
   }
 
   get email() {
@@ -60,8 +66,11 @@ export class LoginComponent  implements OnInit, OnDestroy{
       next: (res) => {
         alert('Login exitoso');
         console.log('Respuesta backend:', res);
+        this.loginResult = 'Login exitoso';
       },
       error: (err) => {
+        this.loginError = true;
+        console.error('Error durante el login:', err);
         this.loginResult = 'Error en autenticación: ' + (err.error?.message || 'Intenta de nuevo');
       },
     }));

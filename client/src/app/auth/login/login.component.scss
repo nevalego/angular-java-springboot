@@ -193,6 +193,20 @@
             }
         }
     }
+
+    .login-result {
+      margin: 16px 0;
+      font-weight: 500;
+      font-size: $font-m;
+
+      &.error {
+        color: $error;
+      }
+
+      &.success {
+        color: $success;
+      }
+    }
 }
 
 .footer-info {

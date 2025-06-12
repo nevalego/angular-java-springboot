@@ -55,7 +55,8 @@
                       {{ 'REGISTER' | translate }}
                     </a>
                 </p>
-                <p class="text-align-center">
+                <p *ngIf="loginResult !== ''" class="login-result text-align-center"
+                [ngClass]="{'error': loginError, 'success': !loginError}">
                     {{ 'LOGIN_RESULT' | translate }}: {{ loginResult }}
                 </p>
                 </form>

@@ -1,5 +1,6 @@
 package com.nveapp.service;
 
+import com.nveapp.exception.InvalidCredentialsException;
 import com.nveapp.repository.UserRepository;
 import com.nveapp.security.JwtUtil;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,10 @@ public class AuthService {
     public String login(String email, String password) {
         if (userRepository.validateUser(email, password)) {
             return jwtUtil.generateToken(email);
+        } else {
+            throw new InvalidCredentialsException(
+                    "Credenciales inválidas: correo electrónico o contraseña incorrectos.");
         }
-        throw new RuntimeException("Credenciales inválidas");
     }
 
     /**
